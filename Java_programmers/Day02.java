@@ -54,7 +54,7 @@ public class Solution {
     }
 }
 
-*문자열 겹쳐쓰기
+* 1-1 문자열 겹쳐쓰기
 class Solution {
     public String solution(String my_string, String overwrite_string, int s) {
         String answer = "";
@@ -73,5 +73,16 @@ class Solution {
             k++;
         }
         return answer;
+    }
+}
+
+*1-2 문자열 겹쳐쓰기
+//간단하게 코드짜기
+class Solution {
+    public String solution(String my_string, String overwrite_string, int s) {
+       String before = my_string.substring(0,s);
+        String after = my_string.substring(s+ overwrite_string.length());
+       
+        return before + overwrite_string + after;
     }
 }

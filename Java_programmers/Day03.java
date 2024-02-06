@@ -48,3 +48,15 @@ class Solution {
 //String -> int  변환 : Integer.parseInt()
 //int -> String  변환 : String.valueOf()
 
+*두 수의 연산값 비교하기
+class Solution {
+    public int solution(int a, int b) {
+        String str = String.valueOf(a)+String.valueOf(b);
+       int answer = 2*a*b;
+        if(Integer.parseInt(str)> answer){
+            return Integer.parseInt(str);
+        }else{
+            return answer;
+        }
+    }
+}

@@ -1,3 +1,30 @@
+class Solution {
+    public String solution(String code) {
+        String rat = "";
+        int mode = 0;
+        for(int i = 0; i < code.length(); i++){
+            char ch = code.charAt(i);
+            if(ch == '1'){
+                mode = 0;
+                continue;
+            }else if(ch == '0'){
+                mode = 1;
+            }
+            for(int j = 0; j < rat.length(); j++){
+             if(i == j){
+                 continue;
+             }   
+                
+            }if(mode == 0 && i % 2 == 0){ 
+                rat += ch;
+            }if(mode == 1 && i % 2 != 0){ 
+                rat += ch; 
+            }
+    }
+          return rat; 
+}
+}
+
 *1-1 주사위 게임 2
 class Solution {
     public int solution(int a, int b, int c) {

@@ -1,4 +1,4 @@
-*주사위 게임 2
+*1-1 주사위 게임 2
 class Solution {
     public int solution(int a, int b, int c) {
         int answer = 0;
@@ -23,6 +23,19 @@ class Solution {
     }
 }
 
+1-2 주사위 게임 2 //간단화
+class Solution {
+    public int solution(int a, int b, int c) {
+        int answer = a + b + c;
+        if(a == b && b == c){
+            answer = answer * (a*a+b*b+c*c) * (a*a*a+b*b*b+c*c*c);
+        } else if(a == b || a == c || b == c){
+            answer = answer * (a*a+b*b+c*c);
+        }
+        return answer;
+    }
+}
+    
 *원소들의 곱과 합
 class Solution {
     public int solution(int[] num_list) {
@@ -41,6 +54,26 @@ class Solution {
         }else{
             return 0;
         }
+        return answer;
+    }
+}
+
+*이어 붙인 수
+class Solution {
+    public int solution(int[] num_list) {
+        int answer = 0;
+        String str1 = "";
+        String str2 = "";
+        for(int i = 0; i < num_list.length; i++){
+            if(num_list[i] % 2 != 0){
+                str1 += num_list[i];
+            } else {
+                str2 += num_list[i];
+            }
+        }
+        int num1 = Integer.parseInt(str1);
+        int num2 = Integer.parseInt(str2);
+        answer = num1 + num2;
         return answer;
     }
 }

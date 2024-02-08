@@ -1,28 +1,35 @@
+*코드 처리하기//다른사람 코드 참고
+
 class Solution {
     public String solution(String code) {
-        String rat = "";
+        StringBuilder answer = new StringBuilder();
         int mode = 0;
-        for(int i = 0; i < code.length(); i++){
-            char ch = code.charAt(i);
-            if(ch == '1'){
-                mode = 0;
+        for (int i = 0; i < code.length(); i++) {
+            char current = code.charAt(i);
+            if (current == '1') {
+                mode = mode == 0 ? 1 : 0;
                 continue;
-            }else if(ch == '0'){
-                mode = 1;
             }
-            for(int j = 0; j < rat.length(); j++){
-             if(i == j){
-                 continue;
-             }   
-                
-            }if(mode == 0 && i % 2 == 0){ 
-                rat += ch;
-            }if(mode == 1 && i % 2 != 0){ 
-                rat += ch; 
+
+            if (i % 2 == mode) {
+                answer.append(current);
             }
+        }
+      return answer.length() == 0 ? "EMPTY" : answer.toString();
     }
-          return rat; 
 }
+
+*등차수열의 특정한 항만 더하기//다른사람 코드 참고
+class Solution {
+    public int solution(int a, int d, boolean[] included) {
+        int answer = 0;
+        for(int i = 1; i <= included.length; i++){
+           if(included[i-1] == true){
+               answer += (a+(i-1)*d); //등차수열의 합 a= a+(n-1)d
+           }
+        }
+        return answer;
+    }
 }
 
 *1-1 주사위 게임 2

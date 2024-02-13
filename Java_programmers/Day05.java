@@ -32,6 +32,19 @@ class Solution {
     }
 }
 
+*등차수열 수정
+class Solution {
+    public int solution(int a, int d, boolean[] included) {
+        int answer = 0;
+        for(int i = 0; i < included.length; i++){
+           if(included[i] == true){
+               answer += (a+(i-1)*d); //등차수열의 합 a= a+(n-1)d
+           }
+        }
+        return answer;
+    }
+}
+
 *1-1 주사위 게임 2
 class Solution {
     public int solution(int a, int b, int c) {

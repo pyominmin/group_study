@@ -1,0 +1,55 @@
+package ex01;
+
+public class Parent {
+	//매개변수
+	 String name;
+	 int age;
+	 
+	 //생성자
+	 public Parent(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	 
+	 //메서드
+	 public void SendToChildren() {
+		 System.out.println("이름 : " + name);
+		 System.out.println("나이 : " + age);
+	 }
+	
+}
+----------------------------------------------------------------
+package ex01;
+
+public class Children extends Parent {
+
+	// 매개변수
+	String address;
+	String phone;
+	
+
+	// 생성자
+	public Children(String name, int age, String address, String phone) {
+		super(name, age);
+		this.address = address;
+		this.phone = phone;
+	}
+
+	// 메서드
+	public void GiveInfo() {
+		SendToChildren();
+		System.out.println("주소 : " + address);
+		System.out.println("번호 : " + phone);
+	}
+}
+-------------------------------------------------------------------------
+package ex01;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Children c1 = new Children("김철수", 10, "성북구", "01089570163");
+		c1.GiveInfo();
+	}
+
+}

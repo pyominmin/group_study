@@ -1,0 +1,143 @@
+
+- main 클래스에서 Employee, James, Tomas 클래스의 함수를 선언해서 출력
+ex) name 의 직책은 job 사원번호는 empNo
+ex) job 의 월급은 pay 입니다
+
+
+================================= 출력문 ==================================
+----직원 정보 ---
+
+손흥민의 직책은 과장 사원번호는 120입니다.
+프로젝트를 진행 하고있습니다.
+Java 개발을 하고 있습니다.
+Python 개발을 하고 있습니다.
+내년에 승진입니다.
+과장님의 월급은 3000000원 입니다.
+
+김민재의 직책은 대리 사원번호는 127입니다.
+프로젝트를 진행 하고있습니다.
+React 개발을 하고 있습니다.
+Java script 개발을 하고 있습니다.
+내년에 승진하지 못합니다.
+대리님의 월급은 2000000원 입니다.
+==========================================================================
+
+package young_gun01;
+
+public abstract class Employee {
+	
+	public String name;
+	public String job;
+	public int empNo;
+	public int pay;
+	
+	
+	public Employee(String name, String job, int empNo, int pay) {
+		this.name = name;
+		this.job = job;
+		this.empNo = empNo;
+		this.pay = pay;
+	}
+	
+	public void EmployeeSame(String name, String job, int empNo, int pay) {
+		System.out.println(name + "의 직책은 " + job + "사원번호는 " + empNo + "입니다,");
+		System.out.println("프로젝트를 진행하고 있습니다.");
+		
+	}
+	
+	public abstract void EmployeeDevelop();
+	
+	public abstract void EmployeeRank();
+	
+	public abstract void pay();
+	
+}
+
+----------------------------------------------------------------------------
+
+package young_gun01;
+
+public class James extends Employee {
+
+	public James(String name, String job, int empNo, int pay) {
+		super(name, job, empNo, pay);
+
+	}
+
+	@Override
+	public void EmployeeDevelop() {
+		System.out.println("Java 개발을 하고 있습니다.");
+		System.out.println("Python 개발을 하고 있습니다.");
+
+	}
+
+	@Override
+	public void EmployeeRank() {
+		System.out.println("내년에 승진입니다.");
+
+	}
+
+	@Override
+	public void pay() {
+		System.out.println(this.job + "의 월급은 " + this.pay + "입니다.");
+	}
+}
+----------------------------------------------------------------------------
+
+package young_gun01;
+
+public class Tomas extends Employee{
+
+	public Tomas(String name, String job, int empNo, int pay) {
+		super(name, job, empNo, pay);
+	}
+
+	@Override
+	public void EmployeeDevelop() {
+		System.out.println("React 개발을 하고 있습니다.");
+		System.out.println("Java script 개발을 하고 있습니다.");
+		
+	}
+
+	@Override
+	public void EmployeeRank() {
+		System.out.println("내년에 승진하지 못합니다.");
+		
+	}
+
+	@Override
+	public void pay() {
+		System.out.println(this.job + "의 월급은 " + this.pay + "입니다.");
+		
+	}
+
+}
+
+-------------------------------------------------------------------------------
+
+package young_gun01;
+
+public class Main {
+
+	public static void main(String[] args) {
+			
+		Employee j1 = new James("James", "과장", 120, 3000000);
+		Employee t1 = new Tomas("Tomas", "대리", 127, 2000000);
+		
+		System.out.println("-----직원 정보-----");
+		
+		j1.EmployeeSame("James", "과장", 120, 2000000);
+		j1.EmployeeDevelop();
+		j1.EmployeeRank();
+		j1.pay();
+		
+		System.out.println("------------------------");
+		
+		t1.EmployeeSame("Tomas", "대리", 127, 2000000);
+		t1.EmployeeDevelop();
+		t1.EmployeeRank();
+		t1.pay();
+		
+	}
+
+}

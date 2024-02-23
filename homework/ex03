@@ -1,0 +1,40 @@
+package HeRin01;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+	public static void main(String[] args) {
+
+		List<String> wordsList = new ArrayList<>();
+		List<String> filteredWords = Main.getFilteredWords(wordsList);
+
+		String[] wordList = { "leaf", "banana", "orange", "strawberry", "pear", "cat" };
+
+		for (int i = 0; i < wordList.length; i++) {
+			wordsList.add(wordList[i]);
+		}
+
+		System.out.println("5글자 이상인 단어들의 리스트:");
+		// main메소드 끝
+		
+		Main.getFilteredWords(wordsList);
+		for (String word : wordsList) {
+			if (word.length() >= 5) {
+				System.out.println(word);
+			}
+		}
+	}
+
+	private static List<String> getFilteredWords(List<String> wordsList) {
+		List<String> List = new ArrayList<>();
+
+		for (String word : wordsList) {
+			if (word.length() >= 5) {
+				List.add(word);
+			}
+		}
+		return List;
+
+	}
+}

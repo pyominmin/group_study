@@ -19,6 +19,6 @@ public int getCount(int count) {
 		
 	}
 
-
+//getter, setter
 
 }

@@ -5,7 +5,7 @@ class Product{
 
 //생성자
 
-// 출고상품 횟수 메서드
+// 출고상품 횟수 static메서드
 
 //getter, setter
 

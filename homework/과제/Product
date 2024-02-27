@@ -1,0 +1,14 @@
+class Product{
+
+//private 변수 선언
+//상품번호, 상품명, 회사명, 가격, 출고상품 횟수
+
+
+//생성자
+
+//getter, setter
+
+//toString 출력문
+
+
+}

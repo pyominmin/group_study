@@ -1,0 +1,102 @@
+package y.h01;
+
+public interface Shape {
+
+	//넓이를 계산하는 메서드
+
+	double area();
+}
+
+-------------------------------------------------------------
+package y.h01;
+
+public class Rectangle implements Shape{
+	private double width =0;
+	private double height = 0;
+	private double area = 0;
+	private double periphery = 0;
+	
+	
+	public Rectangle(double width, double height) {
+		this.width = width;
+		this.height = height;
+	}
+	
+	
+	@Override
+	public double area() {
+		area = width * height;
+		return area;
+	}
+	
+	public double periphery() {
+		periphery = width * 4;
+		return periphery;
+		
+	}
+	
+	
+	public void Print() {
+		
+		System.out.printf("사각형의 둘레는 %.2f입니다.", area);
+		System.out.println();
+		System.out.printf("사각형의 넓이는 %.2f입니다.", periphery);
+		
+	}
+}
+
+----------------------------------------------------------------------
+
+package y.h01;
+
+public class Circle implements Shape{
+	private double radius;
+	private double area;
+	private double periphery;
+	
+	public Circle(double radius) {
+		this.radius = radius;
+	}
+	
+	@Override
+	public double area() {
+		area = radius * radius * 3.14;
+		return area;
+	}
+
+	public double periphery() {
+		periphery = radius * 2 * 3.14;
+		return periphery;
+		
+	}
+
+public void Print() {
+		
+		System.out.printf("원의 둘레는 %.2f입니다.", area);
+		System.out.println();
+		System.out.printf("원의 넓이는 %.2f입니다.", periphery);
+		
+	}
+}
+
+-------------------------------------------------------------------------------
+
+package y.h01;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Rectangle r1 = new Rectangle(3.1, 4.3);
+		r1.area();
+		r1.periphery();
+		r1.Print();
+
+		Circle c1 = new Circle(4.5);
+		System.out.println();
+		c1.area();
+		c1.periphery();
+		c1.Print();
+	}
+
+}

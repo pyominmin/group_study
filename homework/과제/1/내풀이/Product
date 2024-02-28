@@ -1,0 +1,26 @@
+
+
+class Product{
+	
+	private int mNum = 0, mPrice = 0;
+	private String mName = null, mWhere;
+	private static int count = 0;
+	
+	public Product( String name , String where, int price) {
+		this.mPrice = price;
+		this.mName = name;
+		this.mWhere = where;
+		count++;
+		mNum = count + 1199;;
+	}
+
+	public static int getCount() {
+		return count;
+	}
+	
+	
+	public String toString() {
+		return mNum + ". " + mName +" " + mWhere + " " + mPrice + "원";
+	}
+	
+}

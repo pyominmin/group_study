@@ -1,0 +1,18 @@
+
+public class Main {
+	
+	public static void main(String[] args) {
+
+			Product p1 = new Product("새우깡", "농심(주)", 1900);
+			Product p2 = new Product("빼뺴로", "롯데제과", 2200);
+			Product p3 = new Product("먹태깡", "농심(주)", 2500);
+			
+			System.out.println(p1.toString());
+			System.out.println(p2.toString());
+			System.out.println(p3.toString());
+			
+			System.out.println("출고 상품 : " + Product.getCount() + "건");
+
+		}
+
+	}

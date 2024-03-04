@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interval Challenge</title>
+    <script>
+        let number = 1;
+
+        // 2초마다 숫자를 출력하는 함수
+        function printNumber() {
+            if (number <= 10) {
+                console.log(number);
+                number++; 
+            } else {
+                clearInterval(intervalId);
+            }
+        }
+
+        const intervalId = setInterval(printNumber, 2000);
+    </script>
+</head>
+<body>
+    <!-- 이 예제에서는 본문이 비어 있음 -->
+</body>
+</html>

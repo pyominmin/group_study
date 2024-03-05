@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 학생 목록에서 성적이 80점 이상인 학생들의 목록을 필터링하는 function을 작성해 콘솔로 출력
+
+        const students = [
+            { name: "홍길동", score: 74 },
+            { name: "손흥민", score: 98 },
+            { name: "이강인", score: 81 },
+            { name: "황희찬", score: 65 }
+        ];
+
+        function filterHighScorers(students) {
+            const highScorers = students.filter(student => student.score >= 80);
+            console.log(highScorers);
+        }
+
+        
+        filterHighScorers(students);
+    </script>
+</head>
+<body>
+</body>
+</html>

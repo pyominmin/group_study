@@ -1,0 +1,25 @@
+package SH01;
+
+import java.util.Scanner;
+
+public class CorrectNumber {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int num;
+		System.out.print("1이상 6이하의 정수를 입력하시오 : ");
+
+		int random = (int) ((Math.random() * 6) + 1);
+
+		while (true) {
+			num = in.nextInt();
+			if (num == random) {
+				System.out.println("정답입니다!");
+				break;
+			} else {
+				System.out.print("1이상 6이하의 정수를 다시 입력하시오 : ");
+			}
+		}
+	}
+
+}

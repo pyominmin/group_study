@@ -1,0 +1,33 @@
+package y.g02;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("가위 바위 보!");
+        System.out.print("나 -> ");
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.next();
+        scanner.close();
+
+        int computerInput = (int) (Math.random() * 3);
+        String[] gestures = {"묵", "찌", "빠"};
+        String computerGesture = gestures[computerInput];
+
+        System.out.println("상대 -> " + computerGesture);
+
+        String result = determineWinner(userInput, computerGesture);
+        System.out.println(result);
+    }
+
+    public static String determineWinner(String userGesture, String computerGesture) {
+        if (userGesture.equals(computerGesture)) {
+            return "비겼습니다.";
+        } else if ((userGesture.equals("묵") && computerGesture.equals("찌"))
+                || (userGesture.equals("찌") && computerGesture.equals("빠"))
+                || (userGesture.equals("빠") && computerGesture.equals("묵"))) {
+            return "이겼습니다!";
+        } else {
+            return "졌습니다.";
+        }
+    }
+}

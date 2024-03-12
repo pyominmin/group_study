@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #text {
+            background-color: #ffff00;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        #text:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <span id = 'text' style="background-color: #ffff00;">자동회전하는 텍스트입니다.</span>
+
+    <script>
+       let s = document.getElementById('text'); //id가 text인 요소를 찾아서 변수 s에 할당
+       let time = setInterval('rotate()', 300) //0.3초마다 rotate() 함수가 실행되도록 타이머를 설정
+
+       s.addEventListener('click', () => {//텍스트를 클릭하면 clearInterval(time)을 호출하여 타이머를 멈춤
+        clearInterval(time)
+       })
+
+
+       function rotate() {//텍스트를 한 글자씩 회전시키는 함수
+            let str = s.innerHTML;  //변수 str에는 현재 텍스트의 내용이 저장
+            let first = str.substr(0,1) //변수 first에는 텍스트의 첫 글자가 저장
+            let etc = str.substr(1, str.length -1) //etc에는 첫 글자를 제외한 나머지 부분이 저장
+
+            str = etc + first //str에는 제외한 나머지 부분과 첫 글자를 조합하여 새로운 텍스트가 저장
+            s.innerHTML = str; 
+
+       }
+    </script>
+</body>
+</html>

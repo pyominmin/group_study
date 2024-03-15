@@ -11,6 +11,7 @@ Traceback (most recent call last):
     t[0] = 'a'
 TypeError: 'tuple' object does not support item assignment
 
+= 튜플의 속성은 변할 수 없다.
 
 
 
@@ -19,7 +20,8 @@ TypeError: 'tuple' object does not support item assignment
   
   interest = ('삼성전자', 'LG전자', 'SK Hynix')
   
-
+interest = list(('삼성전자', 'LG전자', 'SK Hynix'))
+print(type(interest))
 
   
 
@@ -27,7 +29,8 @@ TypeError: 'tuple' object does not support item assignment
   
  예시: (2, 4, 6, 8 ... 98)
 
-
+interest = tuple(range(0,99,2))
+print(interest)
 
 
 문제4) 다음 아이스크림 이름과 희망 가격을 딕셔너리로 구성하시오
@@ -38,11 +41,17 @@ TypeError: 'tuple' object does not support item assignment
 폴라포 	1200
 빵빠레 	1800
 
-
+ice = {
+    "메로나":1000,
+    "폴라포":1200,
+    "빵빠레":1800
+}
+print(ice)
 
 
 문제5) 다음의 딕셔너리에서 values 값으로만 구성된 리스트를 생성하시오
 
 icecream = {'탱크보이': 1200, '폴라포': 1200, '빵빠레': 1800, '월드콘': 1500, '메로나': 1000}
 
-정답)
+ice = list(icecream.values())
+print(ice)

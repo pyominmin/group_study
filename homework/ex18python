@@ -1,0 +1,10 @@
+n = int(input("정수 입력")) 
+
+for num in range(2, n + 1): # 2 ~10 까지반복
+    is_prime = True 
+    for i in range(2, num): 
+        if num % i == 0:
+            is_prime = False
+            break  
+    if is_prime:  
+        print(num, end=',')

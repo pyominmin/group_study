@@ -1,0 +1,21 @@
+names = "김영건,손흥민,박지성,나윤호,홍명보,심주찬,나윤호,유현준,김영건,표민,김하영,김영건,정소현,윤혜린,이환희,이영표,유현준,손흥민,정소현".split(",")
+print(names)
+
+#1 김씨와 이씨 성을 가진 사람은 각각 몇명인지 출력
+count_kim = len(list(filter(lambda x: x.startswith("김"), names)))
+count_lee = len(list(filter(lambda x: x.startswith("이"), names)))
+
+print("김씨 성을 가진 사람의 수:", count_kim)
+print("이씨 성을 가진 사람의 수:", count_lee)
+
+#2 김영건 이름이 몇개 들어있는지 출력
+count = len(list(filter(lambda x: x.startswith("김영건"), names)))
+print("김영건 이름의 수:",count)
+
+#3 중복을 제거 후 출력
+del_names = list(set(names))
+print(del_names)
+
+#4 중복 제거 한 이름을 오름차순으로 출력
+del_name = sorted(set(names))
+print(del_name)

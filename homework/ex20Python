@@ -1,0 +1,16 @@
+import random
+
+print('Welcome To Password Generator')
+
+chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@$%^&*().,?0123456789'
+
+# 생성할 비밀번호의 개수와 각 비밀번호의 길이를 입력 받기
+number = int(input('Enter the number of passwords you want to generate: '))
+length = int(input('Enter the length of each password: '))
+
+print('\n--Here are your passwords--')
+
+# 비밀번호 생성
+for _ in range(number):
+    password = ''.join(random.choice(chars) for _ in range(length))
+    print(password)
